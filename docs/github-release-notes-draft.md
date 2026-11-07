@@ -1,6 +1,6 @@
 # Buggd v1.1.0 — GitHub release notes (draft)
 
-> **Draft only.** This file prepares copy for a future GitHub Release. No GitHub Release or npm package has been published. The unscoped npm name `buggd` was blocked by npm’s name-similarity check. The proposed alternative package name is `getbugged`, while the product and executable remain Buggd / `buggd`. Do not publish a release or announce `npx getbugged` as working before verifying the public registry installation.
+> **Draft for an official GitHub Release.** The `getbugged@1.1.0` npm package is published and its public `npx getbugged` installation has been tested. A GitHub Release has not yet been created. The product and executable are still Buggd / `buggd`.
 
 ## Find what’s broken
 
@@ -16,7 +16,17 @@ Buggd is a free, MIT-licensed, local-first website scanner for people who build 
 - **Keep results local:** export HTML, PDF and JSON reports; manage saved scan history and inspect the discovered page map.
 - **Choose light or dark:** Buggd’s olive/lime visual identity and self-hosted typefaces.
 
-## How to try the public source today
+## Install from npm
+
+Requires Node.js 22.12+ and npm.
+
+```sh
+npx getbugged
+```
+
+If the Playwright browser is missing, use the guided setup or run `npx getbugged --install-browser`.
+
+## Build from source
 
 Requires Node.js 22.12+ and Git.
 
@@ -31,7 +41,7 @@ npm start
 
 Buggd starts a local dashboard and prints its address. Only scan websites you are authorised to test.
 
-**Pending npm publication:** The proposed installation command is `npx getbugged`, but this package is not confirmed publicly available. A public npm installation must be verified after publishing before these release notes are used as an npm launch announcement.
+**Live npm package:** [`getbugged@1.1.0`](https://www.npmjs.com/package/getbugged) has been published and the public installation command tested.
 
 ## Tested
 
@@ -41,13 +51,12 @@ The v1.1.0 source passed real GitHub Actions checks on Windows, Ubuntu and macOS
 
 Buggd is not a comprehensive accessibility, SEO or security audit. It deliberately excludes destructive actions, live form submissions, authenticated journeys and some cross-origin content. Browser screenshots may contain private information: inspect reports before sharing. See [security and coverage limits](security.md).
 
-## After npm approval — publication checklist
+## GitHub Release checklist
 
-- [ ] Verify that npm accepts the **unscoped** `getbugged` name; a missing registry entry alone does not confirm publishability.
-- [ ] Publish the authorised reviewed package and confirm `getbugged@1.1.0` exists in the public npm registry.
-- [ ] Test `npx getbugged` and browser setup from a clean environment; document any platform prerequisites.
-- [ ] Update README release status and link to the real npm package.
-- [ ] Add reviewed Buggd UI screenshots after a fresh safe test scan.
-- [ ] Only then create an official GitHub Release and announce public availability.
+- [x] Publish the unscoped `getbugged@1.1.0` npm package.
+- [x] Verify the public `npx getbugged` install works.
+- [x] Update the README to link to the live npm package and installation command.
+- [x] Add reviewed Buggd UI screenshots to the README.
+- [ ] Create an official GitHub Release using the verified release notes.
 
 Buggd is [MIT licensed](../LICENSE). Contributions and bug reports are welcome via [GitHub Issues](https://github.com/skillman85/Buggd/issues).
