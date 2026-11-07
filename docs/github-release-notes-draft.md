@@ -1,6 +1,6 @@
 # Buggd v1.1.0 — GitHub release notes (draft)
 
-> **Draft only.** This file prepares copy for a future GitHub Release. No GitHub Release or npm package has been published. The unscoped npm name `buggd` is currently blocked by npm’s name-similarity check, and an appeal is pending. Do not publish a release or announce `npx buggd` as working before it has been verified against the public registry.
+> **Draft only.** This file prepares copy for a future GitHub Release. No GitHub Release or npm package has been published. The unscoped npm name `buggd` was blocked by npm’s name-similarity check. The proposed alternative package name is `getbugged`, while the product and executable remain Buggd / `buggd`. Do not publish a release or announce `npx getbugged` as working before verifying the public registry installation.
 
 ## Find what’s broken
 
@@ -31,7 +31,7 @@ npm start
 
 Buggd starts a local dashboard and prints its address. Only scan websites you are authorised to test.
 
-**Pending npm name approval:** The intended installation command is `npx buggd`, but it is not currently available for this application. A public npm installation must be verified after publishing before these release notes are used as an npm launch announcement.
+**Pending npm publication:** The proposed installation command is `npx getbugged`, but this package is not confirmed publicly available. A public npm installation must be verified after publishing before these release notes are used as an npm launch announcement.
 
 ## Tested
 
@@ -43,9 +43,9 @@ Buggd is not a comprehensive accessibility, SEO or security audit. It deliberate
 
 ## After npm approval — publication checklist
 
-- [ ] Confirm npm explicitly permits publishing the **unscoped** `buggd` name.
-- [ ] Publish the authorised reviewed package and confirm `buggd@1.1.0` exists in the public npm registry.
-- [ ] Test `npx buggd` and browser setup from a clean environment; document any platform prerequisites.
+- [ ] Verify that npm accepts the **unscoped** `getbugged` name; a missing registry entry alone does not confirm publishability.
+- [ ] Publish the authorised reviewed package and confirm `getbugged@1.1.0` exists in the public npm registry.
+- [ ] Test `npx getbugged` and browser setup from a clean environment; document any platform prerequisites.
 - [ ] Update README release status and link to the real npm package.
 - [ ] Add reviewed Buggd UI screenshots after a fresh safe test scan.
 - [ ] Only then create an official GitHub Release and announce public availability.
