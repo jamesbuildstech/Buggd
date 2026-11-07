@@ -10,7 +10,7 @@ const package_ = JSON.parse(
     await import("node:fs/promises")
   ).readFile(new URL("../package.json", import.meta.url), "utf8"),
 );
-const tarball = resolve(process.argv[2] || `buggd-${package_.version}.tgz`);
+const tarball = resolve(process.argv[2] || `${package_.name}-${package_.version}.tgz`);
 const directory = await mkdtemp(join(tmpdir(), "buggd-package-"));
 const npm = process.platform === "win32" ? "npm.cmd" : "npm";
 const children = new Set();
@@ -31,7 +31,7 @@ async function launch(extraEnv = {}) {
       : join(directory, "node_modules/.bin/buggd");
   const arguments_ =
     process.platform === "win32"
-      ? [join(directory, "node_modules/buggd/lib/cli/index.js"), "--no-open"]
+      ? [join(directory, "node_modules", package_.name, "lib/cli/index.js"), "--no-open"]
       : ["--no-open"];
   const child = spawn(executable, arguments_, {
     cwd: directory,
@@ -175,7 +175,7 @@ try {
   const install = execFileSync(
     process.execPath,
     [
-      join(directory, "node_modules/buggd/lib/cli/index.js"),
+      join(directory, "node_modules", package_.name, "lib/cli/index.js"),
       "--install-browser",
     ],
     { cwd: directory, env: process.env, timeout: 120000, encoding: "utf8" },

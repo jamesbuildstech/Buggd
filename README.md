@@ -24,7 +24,7 @@
 
 ---
 
-**Release status:** The source for **Buggd v1.1.0** is public and has passed Windows, Ubuntu and macOS CI on Node.js 22 and 24. **The npm package is not published:** the registry has blocked the unscoped name `buggd` pending a name review. The intended public command remains `npx buggd`, but **it will not install this application until npm publication succeeds**.
+**Release status:** The source for **Buggd v1.1.0** is public and has passed Windows, Ubuntu and macOS CI on Node.js 22 and 24. **The npm package is not published.** After npm blocked the unscoped name `buggd`, we prepared the alternative unscoped npm package **`getbugged`** while keeping the product name and executable **Buggd / `buggd`**. The planned public launch command is `npx getbugged`, **subject to npm accepting the name and a successful registry installation**.
 
 Buggd is a free, MIT-licensed website scanning and testing tool. Enter a website URL, let Chromium inspect it, then use a visual dashboard to understand what was observed, where it happened and what to check or fix. It runs on your computer — no signup, hosted account, paid API or mandatory AI service.
 
@@ -39,7 +39,7 @@ Most website checks tell you that something is wrong. Buggd aims to show **which
 
 ## Run Buggd from source
 
-Until npm approves the package name, this is the working way to try Buggd. You need [Node.js 22.12+](https://nodejs.org/en/download), npm and Git.
+Until the new npm package is published and verified, this is the working way to try Buggd. You need [Node.js 22.12+](https://nodejs.org/en/download), npm and Git.
 
 ```bash
 git clone https://github.com/skillman85/Buggd.git
@@ -62,13 +62,13 @@ The development UI runs at `http://127.0.0.1:5173`. On Linux, Chromium may addit
 
 ### Planned one-command install
 
-Once npm approves and publishes the **unscoped** `buggd` package, the intended command is:
+The proposed public npm package is **`getbugged`** (unscoped). After it has been accepted and published on npm, the intended command is:
 
 ```bash
-npx buggd
+npx getbugged
 ```
 
-If Chromium is missing, Buggd offers an installation flow, or you can run `npx buggd --install-browser`. **These npm commands are not available for Buggd yet.** We will update this section when the actual registry install is independently verified.
+The installed executable remains **`buggd`**. If Chromium is missing, Buggd offers an installation flow, or you can run `npx getbugged --install-browser` **after publication**. **Neither command is confirmed live yet.** We'll update this section after a clean registry installation succeeds.
 
 ## What Buggd checks
 
