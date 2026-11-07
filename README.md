@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <a href="#run-buggd-from-source">Get started</a> ·
+  <a href="#install-and-run">Get started</a> ·
   <a href="#what-buggd-checks">Features</a> ·
   <a href="#screenshots">Screenshots</a> ·
   <a href="docs/security.md">Security & limits</a> ·
@@ -24,7 +24,7 @@
 
 ---
 
-**Release status:** The source for **Buggd v1.1.0** is public and has passed Windows, Ubuntu and macOS CI on Node.js 22 and 24. **The npm package is not published.** After npm blocked the unscoped name `buggd`, we prepared the alternative unscoped npm package **`getbugged`** while keeping the product name and executable **Buggd / `buggd`**. The planned public launch command is `npx getbugged`, **subject to npm accepting the name and a successful registry installation**.
+**Release status:** **Buggd v1.1.0 is published on [npm as `getbugged`](https://www.npmjs.com/package/getbugged)** and has been installed and launched successfully from the public registry. The product and CLI executable remain named **Buggd / `buggd`**. The source is public and has passed Windows, Ubuntu and macOS CI on Node.js 22 and 24.
 
 Buggd is a free, MIT-licensed website scanning and testing tool. Enter a website URL, let Chromium inspect it, then use a visual dashboard to understand what was observed, where it happened and what to check or fix. It runs on your computer — no signup, hosted account, paid API or mandatory AI service.
 
@@ -37,9 +37,19 @@ Most website checks tell you that something is wrong. Buggd aims to show **which
 - **Evidence you can inspect:** screenshots, element highlights, page details, console/network observations and a navigable page map.
 - **Check your fixes:** save a review state, run another scan and compare verified changes without confusing “fix attempted” with “fixed”.
 
+## Install and run
+
+Requires [Node.js 22.12+](https://nodejs.org/en/download) and npm. Run the published Buggd package:
+
+```bash
+npx getbugged
+```
+
+Buggd opens its local dashboard and guides you through browser setup if Chromium is not yet installed. You can also run `npx getbugged --install-browser` to install the required Playwright browser.
+
 ## Run Buggd from source
 
-Until the new npm package is published and verified, this is the working way to try Buggd. You need [Node.js 22.12+](https://nodejs.org/en/download), npm and Git.
+To build from GitHub instead, you need Node.js 22.12+, npm and Git.
 
 ```bash
 git clone https://github.com/skillman85/Buggd.git
@@ -59,16 +69,6 @@ npm run dev
 ```
 
 The development UI runs at `http://127.0.0.1:5173`. On Linux, Chromium may additionally need operating-system dependencies; see [development setup](docs/development.md).
-
-### Planned one-command install
-
-The proposed public npm package is **`getbugged`** (unscoped). After it has been accepted and published on npm, the intended command is:
-
-```bash
-npx getbugged
-```
-
-The installed executable remains **`buggd`**. If Chromium is missing, Buggd offers an installation flow, or you can run `npx getbugged --install-browser` **after publication**. **Neither command is confirmed live yet.** We'll update this section after a clean registry installation succeeds.
 
 ## What Buggd checks
 
