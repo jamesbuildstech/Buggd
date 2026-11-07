@@ -4,11 +4,11 @@
 
 Buggd v1.1.0 source is available on GitHub, with six GitHub Actions jobs passing on Windows, Ubuntu and macOS with Node.js 22 and 24. See the [final release-readiness report](final-release-readiness.md).
 
-**Public npm publication is pending.** The unscoped `buggd` name was rejected by npm’s similarity protection; the maintainer has requested manual review. Do not claim `npx buggd` is publicly installable until a published package and clean install have been verified.
+**Public npm publication is pending.** The unscoped `buggd` package name was rejected by npm’s similarity protection; the maintainer has requested manual review and prepared `getbugged` as the alternative unscoped npm name. The product is still called Buggd, and its executable stays `buggd`. Do not claim `npx getbugged` is publicly installable until npm accepts publication and a clean install succeeds.
 
 ## Near-term
 
-- Obtain npm approval for the unscoped name `buggd` without changing the CLI branding, then verify a clean registry installation.
+- Verify npm accepts the unscoped `getbugged` package name, publish the reviewed package under that name, and test `npx getbugged` from a clean environment without changing Buggd branding.
 - Add privacy-reviewed application screenshots from a fresh authorised Buggd scan.
 - Collect issue reports from actual users and improve first-run guidance based on observed difficulties.
 
